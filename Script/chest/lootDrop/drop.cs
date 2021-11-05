@@ -4,13 +4,6 @@ using System;
 using UnityEngine;
 using System.IO;
 
-/*Rules for creating weighted table
- * 1. Everything in the table combined must equal up to 100 or 1000
- * 2. Create a random value in a range between 0 and the tallied weight(100 or 1000)
- * 3. Use for each statement to check what weapon the player pulled
- * 4. 
-
- */
 public class drop
 {
     public int random;
