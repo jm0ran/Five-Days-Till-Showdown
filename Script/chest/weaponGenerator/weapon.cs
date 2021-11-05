@@ -2,22 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-using System.IO;
 
-[System.Serializable]
-public class weapon
+[Serializable]//allows the class to be serializable
+public class weapon//weapon class for creation of every weapon instance
 {
-    public string weaponName;
-    public string damageType;
-    public int damageValue;
-    public int weight;
+    public string weaponName;//name of the weapon
+    public string damageType;//what type of weapon(blunt, sharp, firearm, etc.)
+    public int damageValue;//how much damage the weapon does
+    public int weight;//drop chance of the weapon from a chest
 
-    public weapon(string iWeaponName, string iDamageType, int iDamageValue, int iWeight)
+    public weapon(string iWeaponName, string iDamageType, int iDamageValue, int iWeight)//constructor for setting the values of each weapon when created
     {
-        this.weaponName = iWeaponName;
-        this.damageType = iDamageType;
-        this.damageValue = iDamageValue;
-        this.weight = iWeight;
+        this.weaponName = iWeaponName;//sets the name of the weapon
+        this.damageType = iDamageType;//sets the dmg type of the weapon
+        this.damageValue = iDamageValue;//set the dmg values for the weapon
+        this.weight = iWeight;//sets the drop chance for the weapon
     }
 }
 
