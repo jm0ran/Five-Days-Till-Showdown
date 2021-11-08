@@ -16,7 +16,7 @@ public class movement : MonoBehaviour
     }
     void gridMovement()//the movement function that houses all the data used for the movement of the player object
     {
-        interaction interaction = gameObject.GetComponent<interaction>();
+        textInteraction interaction = gameObject.GetComponent<textInteraction>();
         Vector3 savePosF = new Vector3(forward.position.x, forward.position.y, 0);//stores the position of the front movePoint
         Vector3 savePosb = new Vector3(back.position.x, back.position.y, 0);//stores the position of the back movePoint
 
@@ -33,7 +33,7 @@ public class movement : MonoBehaviour
                 }
             }
         }
-        if (interaction.noInput == false)//checks to see that dialogue isn't active
+        if(interaction.noInput == false)//checks to see that dialogue isn't active
         {
             if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))//checks for input from D or down arrow
             {
