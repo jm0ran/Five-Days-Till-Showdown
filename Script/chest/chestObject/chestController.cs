@@ -5,19 +5,11 @@ using UnityEngine;
 public class chestController : MonoBehaviour
 {
     private drop drop = new drop();
-    private string weaponName;
-    // Start is called before the first frame update
-    void Start()
+    public string weaponName;
+    void Start() 
     {
         chest();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void chest()
     {
         if(gameObject.tag == "consumable")
@@ -40,9 +32,8 @@ public class chestController : MonoBehaviour
 
         if(gameObject.tag == "goku")
         {
-            drop.randomValue();
+           drop.randomValue();
            weaponName = drop.dropped("goku.json");
         }
-        Debug.Log(weaponName);
     }
 }
