@@ -32,6 +32,5 @@ public class chest : MonoBehaviour
         File.WriteAllText(Path.Combine(Application.streamingAssetsPath, "goku.json"), JsonUtility.ToJson(goku));
         File.WriteAllText(Path.Combine(Application.streamingAssetsPath, "consumable.json"), JsonUtility.ToJson(consumable));
         //Debug.Log(JsonUtility.FromJson<weaponPool>(File.ReadAllText("testing.json"))); Test to see if the code worked
-
     }
 }
