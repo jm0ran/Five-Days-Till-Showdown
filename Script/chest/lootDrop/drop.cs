@@ -19,9 +19,8 @@ public class drop
     public void randomValue()
     {
         random = UnityEngine.Random.Range(0, 100);
-        Debug.Log(random);
     }
-    public void dropped(string fileName)
+    public string dropped(string fileName)
     {
         file = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, fileName));
         for (int i = 0; i < 4; i++)
@@ -33,14 +32,14 @@ public class drop
         {
             if (random <= rates[j])
             {
-                Debug.Log(weaponName[j]);
-                break;
+                return weaponName[j];
             }
             else
             {
                 random -= rates[j];
             }
         }
+        return null;
     }
 }
 
