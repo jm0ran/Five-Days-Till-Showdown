@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class playerInventory : MonoBehaviour
 {
-    public List<string> inventory = new List<string>();//future use for viewing items obtained
+    public List<string> inventory = new List<string>();//stores the items the player gains from chest
 
-    public void insertInventory(string itemName)
+    public void insertInventory(string itemName)//adds the item to the player inventory
     {
-        inventory.Add(itemName);
-        Debug.Log(itemName);
+        inventory.Add(itemName);//adds the name of the item to the inventory list
     }
 }
 
