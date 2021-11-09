@@ -7,6 +7,8 @@ using System.IO;
 public class weaponPool//name of the class in charge of adding weapons to an organized list to be stored in a json file for later use
 {
     public List<weapon> pool;//list that stores weapon objects created from the weapon class.
+
+    //constructor
     public weaponPool()//constructor that declares the value of pool
     {
         pool = new List<weapon>();//pool declared as an object reference to the class List
