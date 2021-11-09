@@ -18,8 +18,6 @@ public class textInteraction : MonoBehaviour
         {
             noInput = false;
             render.enabled = false;
-            Debug.Log("Working");
-
         }
     }
 }
