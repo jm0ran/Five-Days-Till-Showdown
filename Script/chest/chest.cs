@@ -19,18 +19,34 @@ public class chest : MonoBehaviour
     void Start()
     {
         //set of four weapons that I generated
-        firearms.newWeapon("M4","firearm",8,60);
-        firearms.newWeapon("Pistol", "firearm", 3, 90);
-        melee.newWeapon("bat", "melee", 6, 80);
-        goku.newWeapon("goku gun", "goku", 20, 2);
+        firearms.newWeapon("Makorov","firearm",3, 40);
+        firearms.newWeapon("M1911", "firearm", 4, 30);
+        firearms.newWeapon("Remmington","firearm",8,20);
+        firearms.newWeapon("Hunting Rifle","firearm",10,10);
+
+        melee.newWeapon("Bat", "melee", 8,25);
+        melee.newWeapon("Crowbar", "melee", 7,20);
+        melee.newWeapon("Knife", "melee", 5,18);
+        melee.newWeapon("Cleaver", "melee", 6,15);
+        melee.newWeapon("Axe", "melee", 9,12);
+        melee.newWeapon("Katana", "melee", 12,10);
+
+        goku.newWeapon("bat", "goku", 20, 50);
+        goku.newWeapon("makorov", "goku", 20, 22);
+        goku.newWeapon("Goku Bat", "goku", 20, 10);
+        goku.newWeapon("Vegeta Pistol", "goku", 20, 6);
+        goku.newWeapon("Vegeta Bat", "goku", 20, 5);
+        goku.newWeapon("Goku Pistol", "goku", 20,4);
+        goku.newWeapon("Piccolo Bat", "goku", 20, 3);
+
         consumable.newWeapon("sushi", "consumable", 15, 50);
         consumable.newWeapon("pizza", "consumable", 10, 30);
         consumable.newWeapon("ramen", "consumable", 20, 15);
         consumable.newWeapon("steak", "consumable", 25, 5);
+
         File.WriteAllText(Path.Combine(Application.streamingAssetsPath, "firearms.json"), JsonUtility.ToJson(firearms));
         File.WriteAllText(Path.Combine(Application.streamingAssetsPath, "melee.json"), JsonUtility.ToJson(melee));
         File.WriteAllText(Path.Combine(Application.streamingAssetsPath, "goku.json"), JsonUtility.ToJson(goku));
         File.WriteAllText(Path.Combine(Application.streamingAssetsPath, "consumable.json"), JsonUtility.ToJson(consumable));
-        //Debug.Log(JsonUtility.FromJson<weaponPool>(File.ReadAllText("testing.json"))); Test to see if the code worked
     }
 }
