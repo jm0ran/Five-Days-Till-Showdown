@@ -5,7 +5,8 @@ using UnityEngine;
 public class detector : MonoBehaviour
 {
     public bool inRange;
-    public string weaponName;
+    public GameObject player;
+    private string weaponName;
     void Update()
     {
         playerInRange();
@@ -16,7 +17,8 @@ public class detector : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log(weaponName = gameObject.GetComponent<chestController>().weaponName); 
+                player.GetComponent<playerInventory>().insertInventory(gameObject.GetComponent<chestController>().weaponName); 
+                Destroy(gameObject);
             }
         }
     }
@@ -25,6 +27,13 @@ public class detector : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             inRange = true;
+        }
+    }
+        void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            inRange = false;
         }
     }
 }
