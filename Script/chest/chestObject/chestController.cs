@@ -15,25 +15,25 @@ public class chestController : MonoBehaviour
         if(gameObject.tag == "consumable")
         {
             drop.randomValue();
-           weaponName = drop.dropped("consumable.json");
+           weaponName = drop.dropped("consumable.json",4);
         }
 
         if(gameObject.tag == "firearms")
         {
             drop.randomValue();
-            weaponName = drop.dropped("firearms.json");
+            weaponName = drop.dropped("firearms.json",4);
         }
         
         if(gameObject.tag == "melee")
         {
             drop.randomValue();
-            weaponName = drop.dropped("melee.json");
+            weaponName = drop.dropped("melee.json",6);
         }
 
         if(gameObject.tag == "goku")
         {
            drop.randomValue();
-           weaponName = drop.dropped("goku.json");
+           weaponName = drop.dropped("goku.json",7);
         }
     }
 }
