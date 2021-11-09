@@ -11,6 +11,7 @@ public class weapon//weapon class for creation of every weapon instance
     public int damageValue;//how much damage the weapon does
     public int weight;//drop chance of the weapon from a chest
 
+    //constructor
     public weapon(string iWeaponName, string iDamageType, int iDamageValue, int iWeight)//constructor for setting the values of each weapon when created
     {
         this.weaponName = iWeaponName;//sets the name of the weapon
