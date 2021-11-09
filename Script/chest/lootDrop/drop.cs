@@ -20,7 +20,7 @@ public class drop
     {
         random = UnityEngine.Random.Range(0, 100);
     }
-    public string dropped(string fileName)
+    public string dropped(string fileName, int jsonSize)
     {
         file = File.ReadAllText(Path.Combine(Application.streamingAssetsPath, fileName));
         for (int i = 0; i < 4; i++)
