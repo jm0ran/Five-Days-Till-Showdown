@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine.Tilemaps;
 using UnityEngine;
 
+/*Currently not happy with the organization of the script
+Plans to rewrite a large code is in the works, but might not happen for a bit
+The script has become cluttered so steps are being taken to adjust it
+*/
 public class movement : MonoBehaviour
 {
     //set of variable used for the movement
