@@ -9,6 +9,8 @@ public class movement : MonoBehaviour
     public Transform forward;
     public Transform back;
     public Tilemap tilemap;
+
+    public List<GameObject> arrows = new List<GameObject>();
     // Update is called once per frame
     void Update()
     {
@@ -24,6 +26,7 @@ public class movement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))//checks for input from D or right arrow
             {
+                StartCoroutine(delay("D"));
                 Vector3Int gridPos = tilemap.WorldToCell(new Vector3(transform.position.x, transform.position.y, 0));//gets the grid position from the world and converts it to the tilemap grid position
                 if (gridPos.y > -17)//checks to see if the y value of the player is greater than the fartherest value the player can go to the right
                 {
@@ -37,6 +40,7 @@ public class movement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))//checks for input from D or down arrow
             {
+                StartCoroutine(delay("S"));
                 Vector3Int gridPos = tilemap.WorldToCell(new Vector3(transform.position.x, transform.position.y, 0));//gets the grid position from the world and converts it to the tilemap grid position
                 if (gridPos.x > -3)//checks to see if the x value of the player is greater than the fartherest value the player can go down
                 {
@@ -48,8 +52,9 @@ public class movement : MonoBehaviour
         }
         if (interaction.noInput == false)//checks to see that dialogue isn't active
         {
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))//checks for input from the W or up arrow
+            if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))//checks for input from the W or up arrow
             {
+                StartCoroutine(delay("W"));
                 Vector3Int gridPos = tilemap.WorldToCell(new Vector3(transform.position.x, transform.position.y, 0));//gets the grid position from the world and converts it to the tilemap grid position
                 if (gridPos.x < 7)//checks to see if the x value of the player is less than the highest value the player can go up
                 {
@@ -63,6 +68,7 @@ public class movement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))//checks for input from the A or left arrow
             {
+                StartCoroutine(delay("A"));
                 Vector3Int gridPos = tilemap.WorldToCell(new Vector3(transform.position.x, transform.position.y, 0));//gets the grid position from the world and converts it to the tilemap grid position
                 if (gridPos.y < 8)//checks to see if the y value of the player is less than the highest value the player can go to the left
                 {
@@ -72,6 +78,30 @@ public class movement : MonoBehaviour
                 }
             }
         }
-
+    }
+    IEnumerator delay(string keyPressed)
+    {
+        if(keyPressed == "W")
+        {
+            arrows[1].GetComponent<Renderer>().enabled =true;
+        }
+        else if(keyPressed == "D")
+        {
+            arrows[0].GetComponent<Renderer>().enabled =true;
+        }
+        else if(keyPressed == "A")
+        {
+            arrows[2].GetComponent<Renderer>().enabled =true;
+        }
+        else if(keyPressed == "S")
+        {
+            arrows[3].GetComponent<Renderer>().enabled =true;
+        }
+        yield return new WaitForSeconds(0.2f);
+        arrows[1].GetComponent<Renderer>().enabled = false;
+        arrows[0].GetComponent<Renderer>().enabled = false;
+        arrows[2].GetComponent<Renderer>().enabled = false;
+        arrows[3].GetComponent<Renderer>().enabled = false;
+        gridMovement();
     }
 }
