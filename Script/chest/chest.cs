@@ -10,7 +10,6 @@ public class chest : MonoBehaviour
     public weaponPool melee = new weaponPool();
     public weaponPool goku = new weaponPool();
     public weaponPool consumable = new weaponPool();
-    public drop drop = new drop();
 
     void Start()//runs at the start of the project
     {
