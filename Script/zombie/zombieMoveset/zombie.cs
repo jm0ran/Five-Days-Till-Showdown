@@ -5,18 +5,23 @@ using UnityEngine;
 public class zombie
 {
     float biteDmg;
-    int scratchDmg;
+    float scratchDmg;
     int chanceToCrit;
-    int random;
     int health;
+    int speed;
+    int evasion;
+    int random;
 
     public zombie()
     {
         biteDmg = 5f;
-        scratchDmg = 3;
+        scratchDmg = 3f;
         chanceToCrit = 2;
         health = 10;
+        speed = 4;
+        evasion = 10;
     }
+
     public void bite()
     {
         random = UnityEngine.Random.Range(0, 10);
@@ -32,5 +37,10 @@ public class zombie
         {
             biteDmg *= 1.7f;
         }
+    }
+
+    public void dmgTaken(int dmg)
+    {
+        health -= dmg;
     }
 }
