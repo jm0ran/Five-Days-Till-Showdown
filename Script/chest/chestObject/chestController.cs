@@ -15,7 +15,7 @@ public class chestController : MonoBehaviour
         if(gameObject.tag == "consumable")//checks the tag of the chest
         {
             drop.randomValue();//creates a random value used for the dropped function
-           weaponName = drop.dropped("consumable.json",4);//runs the dropped function giving the file name and list size
+            weaponName = drop.dropped("consumable.json",4);//runs the dropped function giving the file name and list size
         }
 
         if(gameObject.tag == "firearms")//checks the tag of the chest
