@@ -13,18 +13,25 @@ public class movement : MonoBehaviour
     public Transform forward;
     public Transform back;
     public Tilemap tilemap;
+    public textInteraction interaction;
+    public Vector3 savePosF;
+    public Vector3 savePosb;
+
 
     public List<GameObject> arrows = new List<GameObject>();
     // Update is called once per frame
+    void Start(){
+        interaction = gameObject.GetComponent<textInteraction>();//grabs the textInteraction script off the player gameObject
+    }
     void Update()
     {
         gridMovement();//the movement function call that runs every frame
     }
     void gridMovement()//the movement function that houses all the data used for the movement of the player object
     {
-        textInteraction interaction = gameObject.GetComponent<textInteraction>();//grabs the textInteraction script off the player gameObject
-        Vector3 savePosF = new Vector3(forward.position.x, forward.position.y, 0);//stores the position of the front movePoint
-        Vector3 savePosb = new Vector3(back.position.x, back.position.y, 0);//stores the position of the back movePoint
+        //Resets vectors at start of script prob idk
+        savePosF = new Vector3(forward.position.x, forward.position.y, 0);//stores the position of the front movePoint
+        savePosb = new Vector3(back.position.x, back.position.y, 0);//stores the position of the back movePoint
 
         if (interaction.noInput == false)//checks to see that dialogue isn't active
         {
